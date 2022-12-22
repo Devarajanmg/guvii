@@ -1,0 +1,20 @@
+#words in s1 but not in s2
+def string_features(s, f):
+        s=s.lower()
+        s1=set(s.split())
+        f=f.lower()
+        s2=set(f.split())
+        s4=s1-s2
+        s4_list=list(s4)
+        s5=s2-s1
+        s5_list=list(s5)
+    
+        for i in s4_list:
+             if i.upper() in s:     
+                 s4_list.remove(i)
+                 s4_list.append(i.upper())
+        print(f"Words in S1 but not in S2 are : {s4_list}")
+            
+               
+string_features(s="the first column F will contain only 5 uniques values",
+                f="the second column S will contain only 3 uniques values")
